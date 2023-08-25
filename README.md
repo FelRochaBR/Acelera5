@@ -1,1 +1,1 @@
-Projeto Acelera - Rede Sovcial
+Projeto Acelera - Rede Social
