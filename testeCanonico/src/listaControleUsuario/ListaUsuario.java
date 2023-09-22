@@ -5,6 +5,7 @@ import encapsularDados.UsuarioLogin;
 
 public class ListaUsuario 
 {
+    
      public UsuarioLogin[] listaUsuario;
     public int lastUsuario;
     
@@ -14,13 +15,7 @@ public class ListaUsuario
        
     }
     
-    public void add(UsuarioLogin novoUsuario){
-        if(lastUsuario+1 < listaUsuario.length){
-            lastUsuario++;
-            listaUsuario[lastUsuario] = novoUsuario;
-        }
-    }
-     public void imprimirUsuarios() {
+       public void imprimirUsuarios() {
     for (int i = 0; i <= lastUsuario; i++) {
         UsuarioLogin novoUsuario = listaUsuario[i];
         
@@ -37,22 +32,14 @@ public class ListaUsuario
         }
     }
 }
-     
-public boolean verifica (UsuarioLogin login)
-{
     
-            boolean status = true;
-    if (login.getEmail().compareTo("armazenaEmail")==0 && login.getSenha().compareTo("armazenaSenha")==0)
-    {
-        System.out.println("TESTE");
-        status=true;
-    } 
-    	
-        return status;
-        
-
-}
-
+    public void add(UsuarioLogin novoUsuario){
+        if(lastUsuario+1 < listaUsuario.length){
+            lastUsuario++;
+            listaUsuario[lastUsuario] = novoUsuario;
+        }
+    }
+ 
     public UsuarioLogin getUsuario(int idNumber){
         if(idNumber < listaUsuario.length){
             return listaUsuario[idNumber];
@@ -80,11 +67,7 @@ public boolean verifica (UsuarioLogin login)
         }
     }
     
-    public void compareUsuarios(){
-        for(int i=0; i<=lastUsuario; i++){
-          
-        }
-    }
+   
      public UsuarioLogin[]getlistaUsuario()
      {
          return listaUsuario;

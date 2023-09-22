@@ -18,19 +18,29 @@ public class telaLogin extends javax.swing.JFrame {
 
 private  String armazenaEmail,armazenaSenha,emailSalvo,senhaSalvo;
 private int tamanho,lastUsuario,status;
-
+ListaUsuario l;
 
 
     /**
      * Creates new form telaLogin
      */
     public telaLogin() {
-                listaUsuario = new UsuarioLogin[tamanho];
-                        UsuarioLogin u = new UsuarioLogin(armazenaEmail, armazenaSenha);
+               
+                        
 
 
         initComponents();
     }
+     public telaLogin(ListaUsuario l) {
+         this.l=l;
+                
+                       
+                        
+
+
+        initComponents();
+    }
+
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -144,9 +154,8 @@ private int tamanho,lastUsuario,status;
         armazenaEmail=campoEmail.getText(); 
         armazenaSenha=campoSenha.getText();
         
-       ListaUsuario l = new ListaUsuario(5);
-    
-          l.showUsuarios();
+      
+       
           
             
             UsuarioLogin[] vetorArmazena=l.getlistaUsuario();
@@ -154,14 +163,16 @@ private int tamanho,lastUsuario,status;
             {
                 if(ler!=null)
                 {
-                  ler.getEmail();
-                ler.setEmail(emailSalvo);   
-                    System.out.println("Email: " + ler);
+                  senhaSalvo=ler.getSenha();
+                emailSalvo= ler.getEmail();   
+                    System.out.println("EMAIL: " +emailSalvo);
+                    System.out.println("SENHA: "+senhaSalvo);
+                            
 
                 }
-                 System.out.println("Email: " + emailSalvo);
+                 
             }
-          l.showUsuarios();
+          
            System.out.println();
     }//GEN-LAST:event_jButton1ActionPerformed
 

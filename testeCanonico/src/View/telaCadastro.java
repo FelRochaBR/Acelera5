@@ -13,7 +13,10 @@ import listaControleUsuario.ListaUsuario;
  * @author pedro
  */
 public class telaCadastro extends javax.swing.JFrame {
-private String armazenaEmail,armazenaSenha;
+    private telaLogin telaLog;
+private String armazenaEmail,armazenaSenha,emailSalvo,senhaSalvo;
+public UsuarioLogin[] listaUsuario;
+private int lastUsuario;
     /**
      * Creates new form telaCadastro
      */
@@ -197,14 +200,14 @@ private String armazenaEmail,armazenaSenha;
          l.add(u);
          l.add(u1);
          l.add(u2);
-                 
+        
+             l.imprimirUsuarios();
 
-
-            l.showUsuarios();
-            System.out.println();
             
-            new telaLogin().show();
-        dispose();     
+                    telaLogin telaLog =new telaLogin(l);
+
+           telaLog.setVisible(true);
+             
     }//GEN-LAST:event_btCadastroActionPerformed
 
     private void campoDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoDataActionPerformed
